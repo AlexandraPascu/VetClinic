@@ -8,7 +8,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class AbstractEntity implements Entity<Long> {
 
-    @Id
+    /*@Id
     //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VetGenerator")
     protected Long id;
 
@@ -18,5 +18,5 @@ public class AbstractEntity implements Entity<Long> {
 
     public void setId(Long id) {
         this.id = id;
-    }
+    }*/
 }
