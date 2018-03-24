@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.alexandra</groupId>
-    <artifactId>com.vet-clinic</artifactId>
+    <artifactId>vet-clinic</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
