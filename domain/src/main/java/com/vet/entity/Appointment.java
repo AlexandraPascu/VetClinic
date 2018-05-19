@@ -41,12 +41,16 @@ public class Appointment {
     @Column(name = "TITLE")
     private String title;
 
-    @Column(name = "COMMENT")
-    private String comment;
+    @Column(name = "APPOINTMENT_TYPE")
+    @Enumerated(EnumType.STRING)
+    private AppointmentType appointmentType;
 
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
     private AppointmentStatus status;
+
+    @Column(name = "COMMENT")
+    private String comment;
 
     @Transient
     @Setter
