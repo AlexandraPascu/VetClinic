@@ -1,6 +1,9 @@
 package com.vet.entity;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -12,6 +15,7 @@ import static com.vet.entity.AppointmentStatus.COMPLETED;
 @Entity
 @Table(name = "APPOINTMENTS")
 @Getter
+@Builder
 public class Appointment {
 
     @Id
@@ -41,8 +45,12 @@ public class Appointment {
     private String comment;
 
     @Column(name = "STATUS")
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private AppointmentStatus status;
+
+    @Transient
+    @Setter
+    private boolean isConflicting;
 
     public void modifyDoctor(Doctor newDoctor) {
         this.doctor = newDoctor;
