@@ -36,4 +36,8 @@ public class DateTimeRange {
     public long getDurationInMinutes() {
         return between(start, end).get(MINUTES);
     }
+
+    public boolean overlaps(DateTimeRange other){
+        return this.start.isBefore(other.end) && this.end.isAfter(other.start);
+    }
 }
