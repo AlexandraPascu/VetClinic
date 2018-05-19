@@ -1,15 +1,23 @@
 package com.vet.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
+
+import static java.lang.String.format;
+import static java.lang.String.join;
 
 @Entity
 @Table(name = "CLIENTS")
+@NoArgsConstructor
 public @Data class Client extends AbstractEntity {
+
+    public static final String PREFIX_BUSINESS_ID = "VC";
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ClientGenerator")
@@ -32,6 +40,31 @@ public @Data class Client extends AbstractEntity {
     private LocalDate joiningDate;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Patient> pets;
+    //@Setter(AccessLevel.NONE)
+    private Set<Patient> pets = new HashSet<>();
 
+    public Client(Long id) {
+        this.id = id;
+    }
+
+    public String getBusinessId(){
+        return PREFIX_BUSINESS_ID + id;
+    }
+
+    public String getFullName(){
+        return join(" ", firstName, lastName);
+    }
+
+    public String getBusinessIdAndName(){
+        return format("%s (%s)", getBusinessId(), getFullName());
+    }
+
+    public void addPet(Patient pet){
+        pet.setOwner(this);
+        pets.add(pet);
+    }
+
+    public void removePet(Patient pet){
+        pets.remove(pet);
+    }
 }

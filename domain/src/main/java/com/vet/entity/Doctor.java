@@ -1,15 +1,14 @@
 package com.vet.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
 
 @Entity
 @Table(name = "DOCTORS")
+@NoArgsConstructor
 public @Data class Doctor extends AbstractEntity {
 
     @Id
@@ -19,5 +18,9 @@ public @Data class Doctor extends AbstractEntity {
 
     @Column(name = "NAME")
     private String name;
+
+    public Doctor(Long id) {
+        this.id = id;
+    }
 
 }

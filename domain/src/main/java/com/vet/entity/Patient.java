@@ -41,4 +41,7 @@ public @Data class Patient extends AbstractEntity {
     @Column(name = "PICTURE", columnDefinition = "mediumblob")
     private byte[] picture;
 
+    @Column(name = "IS_DELETED")
+    private boolean isDeleted = false;
+
 }
