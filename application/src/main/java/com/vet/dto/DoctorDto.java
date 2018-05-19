@@ -1,6 +1,5 @@
 package com.vet.dto;
 
-import lombok.Builder;
 
 public class DoctorDto {
 
