@@ -1,5 +1,6 @@
 package com.vet.entity;
 
+import com.vet.DateTimeRange;
 import org.junit.Test;
 
 import static java.time.LocalDateTime.now;

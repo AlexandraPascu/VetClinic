@@ -1,6 +1,6 @@
 package com.vet.repository;
 
-import com.vet.entity.Client;
+import com.vet.client.Client;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

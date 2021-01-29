@@ -1,8 +1,8 @@
 package com.vet.facade;
 
-import com.vet.annotations.Facade;
+import com.vet.annotations.ApplicationService;
 import com.vet.dto.ClientDto;
-import com.vet.entity.Client;
+import com.vet.client.Client;
 import com.vet.mapper.ClientMapper;
 import com.vet.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 
-@Facade
-public class ClientFacade {
+@ApplicationService
+public class ManageClient {
 
     @Autowired
     private ClientRepository repository;

@@ -1,16 +1,18 @@
-package com.vet.entity;
+package com.vet.appointment;
 
+import com.vet.client.Client;
+import com.vet.DateTimeRange;
+import com.vet.medicalstaff.Doctor;
+import com.vet.patient.Patient;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
-import java.time.LocalDateTime;
 
-import static com.vet.entity.AppointmentStatus.CANCELED;
-import static com.vet.entity.AppointmentStatus.COMPLETED;
+import static com.vet.appointment.AppointmentStatus.CANCELED;
+import static com.vet.appointment.AppointmentStatus.COMPLETED;
 
 @Entity
 @Table(name = "APPOINTMENTS")

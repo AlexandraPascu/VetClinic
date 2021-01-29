@@ -1,6 +1,6 @@
 package com.vet.repository;
 
-import com.vet.entity.Doctor;
+import com.vet.medicalstaff.Doctor;
 import org.springframework.stereotype.Repository;
 
 @Repository

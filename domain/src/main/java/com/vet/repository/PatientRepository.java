@@ -1,11 +1,9 @@
 package com.vet.repository;
 
-import com.vet.entity.Client;
-import com.vet.entity.Patient;
-import org.springframework.data.jpa.repository.Query;
+import com.vet.client.Client;
+import com.vet.patient.Patient;
 import org.springframework.stereotype.Repository;
 
-import java.security.acl.Owner;
 import java.util.Optional;
 
 @Repository

@@ -1,4 +1,4 @@
-package com.vet.entity;
+package com.vet.client;
 
 public enum ClientType {
 

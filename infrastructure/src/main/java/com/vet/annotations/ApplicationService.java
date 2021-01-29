@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Target(value = ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Transactional(propagation = Propagation.REQUIRED)
-public @interface Facade {
+public @interface ApplicationService {
 }

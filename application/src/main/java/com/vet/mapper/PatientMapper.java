@@ -1,9 +1,9 @@
 package com.vet.mapper;
 
 import com.vet.dto.PatientDto;
-import com.vet.entity.Client;
-import com.vet.entity.Doctor;
-import com.vet.entity.Patient;
+import com.vet.client.Client;
+import com.vet.medicalstaff.Doctor;
+import com.vet.patient.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.vet.repository;
 
-import com.vet.entity.Appointment;
-import com.vet.entity.Client;
+import com.vet.appointment.Appointment;
+import com.vet.client.Client;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 

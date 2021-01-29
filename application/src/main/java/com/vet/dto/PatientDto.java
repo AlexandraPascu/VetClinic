@@ -1,6 +1,6 @@
 package com.vet.dto;
 
-import com.vet.entity.Patient;
+import com.vet.patient.Patient;
 
 public class PatientDto {
 

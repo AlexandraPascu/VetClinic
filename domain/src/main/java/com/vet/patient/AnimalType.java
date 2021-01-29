@@ -1,4 +1,4 @@
-package com.vet.entity;
+package com.vet.patient;
 
 import lombok.Data;
 

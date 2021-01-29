@@ -1,7 +1,7 @@
 package com.vet.mapper;
 
 import com.vet.dto.ClientDto;
-import com.vet.entity.Client;
+import com.vet.client.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

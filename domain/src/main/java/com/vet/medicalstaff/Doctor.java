@@ -1,15 +1,16 @@
-package com.vet.entity;
+package com.vet.medicalstaff;
 
+import com.vet.entity.AbstractEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 
 @Entity
-@Table(name = "DOCTORS")
+@Table(name = "DOCTOR")
 @NoArgsConstructor
-public @Data class Doctor extends AbstractEntity {
+@Data
+public class Doctor extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DoctorGenerator")

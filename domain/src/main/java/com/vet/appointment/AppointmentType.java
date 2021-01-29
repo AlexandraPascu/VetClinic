@@ -1,4 +1,4 @@
-package com.vet.entity;
+package com.vet.appointment;
 
 public enum AppointmentType {
 

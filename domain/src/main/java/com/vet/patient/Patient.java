@@ -1,12 +1,15 @@
-package com.vet.entity;
+package com.vet.patient;
 
+import com.vet.client.Client;
+import com.vet.entity.AbstractEntity;
+import com.vet.medicalstaff.Doctor;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name = "PATIENTS")
+@Table(name = "PATIENT")
 public @Data class Patient extends AbstractEntity {
 
     public enum Gender {

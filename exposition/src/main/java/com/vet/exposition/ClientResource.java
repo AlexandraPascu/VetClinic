@@ -1,39 +1,37 @@
-package com.vet.controller;
+package com.vet.exposition;
 
 import com.vet.dto.ClientDto;
-import com.vet.entity.Client;
-import com.vet.facade.ClientFacade;
+import com.vet.facade.ManageClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Set;
 
 @RestController
 @RequestMapping("/api/v1/clients")
-public class ClientController {
+public class ClientResource {
 
     @Autowired
-    private ClientFacade clientFacade;
+    private ManageClient manageClient;
 
     @GetMapping("/{id}")
     public ClientDto get(@PathVariable Long id){
-        return clientFacade.get(id);
+        return manageClient.get(id);
     }
 
     @GetMapping
     public Set<ClientDto> listClientsOrdered(){
-        return clientFacade.findAllOrdered();
+        return manageClient.findAllOrdered();
     }
 
     @PostMapping
     public void create(@RequestBody ClientDto client){
-        clientFacade.create(client);
+        manageClient.create(client);
     }
 
     @PutMapping
     public void update(@RequestBody ClientDto client){
-        clientFacade.update(client);
+        manageClient.update(client);
     }
 
 }

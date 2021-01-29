@@ -1,7 +1,7 @@
 package com.vet.mapper;
 
 import com.vet.dto.AnimalTypeDto;
-import com.vet.entity.AnimalType;
+import com.vet.patient.AnimalType;
 import org.springframework.stereotype.Service;
 
 @Service

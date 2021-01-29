@@ -1,35 +1,35 @@
-package com.vet.controller;
+package com.vet.exposition;
 
 import com.vet.dto.PatientDto;
-import com.vet.facade.PatientFacade;
+import com.vet.facade.ManagePatient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/patients")
-public class PatientController {
+public class PatientResource {
 
     @Autowired
-    private PatientFacade patientFacade;
+    private ManagePatient managePatient;
 
     @GetMapping("/{id}")
     public PatientDto get(@PathVariable Long id){
-        return patientFacade.get(id);
+        return managePatient.get(id);
     }
 
     /*@GetMapping
     public Set<PatientDto> listPatientsOrdered(){
-        return patientFacade.findAllOrdered();
+        return managePatient.findAllOrdered();
     }*/
 
     @PostMapping
     public void create(@RequestBody PatientDto Patient){
-        patientFacade.create(Patient);
+        managePatient.create(Patient);
     }
 
     @PutMapping
     public void update(@RequestBody PatientDto Patient){
-        patientFacade.update(Patient);
+        managePatient.update(Patient);
     }
     
 }

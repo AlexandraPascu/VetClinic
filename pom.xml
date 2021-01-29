@@ -12,68 +12,179 @@
 
     <groupId>com.alexandra</groupId>
     <artifactId>vet-clinic</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
-        <module>infrastructure</module>
         <module>domain</module>
+        <module>infrastructure</module>
         <module>application</module>
+        <module>exposition</module>
     </modules>
 
     <properties>
         <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
         <io.swagger.version>1.0.34</io.swagger.version>
         <io.springfox.version>2.8.0</io.springfox.version>
+        <cucumber.version>1.2.5</cucumber.version>
+        <h2database.version>1.4.196</h2database.version>
+        <lombok.version>1.18.16</lombok.version>
+        <oracle.version>11.2.0.3</oracle.version>
+        <flyway.version>4.0</flyway.version>
     </properties>
 
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>com.alexandra</groupId>
-            <artifactId>infrastructure</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alexandra</groupId>
-            <artifactId>domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>exposition</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-parser</artifactId>
-            <version>${io.swagger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${io.springfox.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${io.springfox.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
-        </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
 
-    </dependencies>
+            <!--Databases-->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2database.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+
+            <!--Swagger-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-parser</artifactId>
+                <version>${io.swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${io.springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${io.springfox.version}</version>
+            </dependency>
+
+            <!--Lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--Test-->
+            <dependency>
+                <groupId>info.cukes</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.cukes</groupId>
+                <artifactId>cucumber-spring</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.cukes</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+
+        </dependencies>
     </dependencyManagement>
 
+    <!--<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArguments>
+                        <Werror/>
+                    </compilerArguments>
+                    <compilerArgument>-Xlint:all,-serial</compilerArgument>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                    <skipIfEmpty>true</skipIfEmpty>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>-->
 
 </project>

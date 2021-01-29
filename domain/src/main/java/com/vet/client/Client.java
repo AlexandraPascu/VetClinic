@@ -1,6 +1,9 @@
-package com.vet.entity;
+package com.vet.client;
 
+import com.vet.entity.AbstractEntity;
+import com.vet.patient.Patient;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -13,9 +16,11 @@ import static java.lang.String.format;
 import static java.lang.String.join;
 
 @Entity
-@Table(name = "CLIENTS")
+@Table(name = "CLIENT")
 @NoArgsConstructor
-public @Data class Client extends AbstractEntity {
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class Client /*extends AbstractEntity*/ {
 
     public static final String PREFIX_BUSINESS_ID = "VC";
 
