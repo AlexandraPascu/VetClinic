@@ -6,9 +6,8 @@ import com.vet.medicalstaff.Doctor;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 
-@Entity
+//@Entity
 @Table(name = "PATIENT")
 public @Data class Patient extends AbstractEntity {
 

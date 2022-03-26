@@ -1,3 +1,4 @@
+/*
 package com.vet.repository;
 
 import com.vet.appointment.Appointment;
@@ -15,3 +16,4 @@ public interface AppointmentRepository extends BaseRepository<Appointment, Long>
     Set<Appointment> findAllActiveByClient(@Param(value = "client") Client client);
 
 }
+*/

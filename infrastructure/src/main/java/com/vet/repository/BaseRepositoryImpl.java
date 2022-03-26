@@ -25,7 +25,7 @@ public class BaseRepositoryImpl <T extends Entity<ID>, ID extends Serializable>
     }
 
     @Override
-    public T findExactlyOne(ID id) {
+    public T findByIdOrThrow(ID id) {
         Optional<T> entityOpt = findById(id);
         return entityOpt.orElseThrow(
                 () -> new EntityNotFoundException(

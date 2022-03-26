@@ -19,7 +19,7 @@ public class ClientMapper {
         dto.lastName = entity.getLastName();
         dto.joiningDate = entity.getJoiningDate();
         dto.socialSecurityNo = entity.getSocialSecurityNo();
-        dto.pets = patientMapper.toDtos(entity.getPets());
+        //dto.pets = patientMapper.toDtos(entity.getPets());
         return dto;
     }
 
@@ -34,7 +34,7 @@ public class ClientMapper {
         entity.setLastName(dto.lastName);
         entity.setJoiningDate(dto.joiningDate);
         entity.setSocialSecurityNo(dto.socialSecurityNo);
-        entity.setPets(patientMapper.toEntities(dto.pets));
+        //entity.setPets(patientMapper.toEntities(dto.pets));
         return entity;
     }
 

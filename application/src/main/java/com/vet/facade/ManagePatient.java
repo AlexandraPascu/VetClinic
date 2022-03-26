@@ -1,17 +1,17 @@
+/*
 package com.vet.facade;
 
-import com.vet.annotations.ApplicationService;
-import com.vet.dto.PatientDto;
 import com.vet.client.Client;
-import com.vet.patient.Patient;
+import com.vet.dto.PatientDto;
 import com.vet.mapper.PatientMapper;
-import com.vet.repository.ClientRepository;
+import com.vet.patient.Patient;
+import com.vet.client.ClientRepository;
 import com.vet.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
-@ApplicationService
+//@ApplicationService
 public class ManagePatient {
 
     @Autowired
@@ -58,3 +58,4 @@ public class ManagePatient {
     }
 
 }
+*/

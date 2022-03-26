@@ -1,8 +1,6 @@
 package com.vet.facade;
 
-import com.vet.annotations.ApplicationService;
-
-@ApplicationService
+//@ApplicationService
 public class ManageAppointment {
 
 

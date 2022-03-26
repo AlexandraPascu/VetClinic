@@ -2,7 +2,8 @@ package com.vet.repository;
 
 import com.vet.BaseLocalIT;
 import com.vet.client.Client;
-import org.junit.Test;
+import com.vet.client.ClientRepository;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;

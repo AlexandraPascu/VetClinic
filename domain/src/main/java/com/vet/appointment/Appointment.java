@@ -1,7 +1,7 @@
 package com.vet.appointment;
 
-import com.vet.client.Client;
 import com.vet.DateTimeRange;
+import com.vet.client.Client;
 import com.vet.medicalstaff.Doctor;
 import com.vet.patient.Patient;
 import lombok.Builder;
@@ -9,12 +9,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 
 import static com.vet.appointment.AppointmentStatus.CANCELED;
 import static com.vet.appointment.AppointmentStatus.COMPLETED;
 
-@Entity
+//@Entity
 @Table(name = "APPOINTMENTS")
 @Getter
 @Builder

@@ -1,6 +1,6 @@
-package com.vet.repository;
+package com.vet.client;
 
-import com.vet.client.Client;
+import com.vet.repository.BaseRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

@@ -8,6 +8,6 @@ import java.io.Serializable;
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID> {
 
-    T findExactlyOne(ID id);
+    T findByIdOrThrow(ID id);
 
 }

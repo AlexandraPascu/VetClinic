@@ -1,3 +1,4 @@
+/*
 package com.vet.exposition;
 
 import com.vet.dto.PatientDto;
@@ -17,10 +18,12 @@ public class PatientResource {
         return managePatient.get(id);
     }
 
-    /*@GetMapping
+    */
+/*@GetMapping
     public Set<PatientDto> listPatientsOrdered(){
         return managePatient.findAllOrdered();
-    }*/
+    }*//*
+
 
     @PostMapping
     public void create(@RequestBody PatientDto Patient){
@@ -33,3 +36,4 @@ public class PatientResource {
     }
     
 }
+*/

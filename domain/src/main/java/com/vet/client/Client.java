@@ -1,16 +1,12 @@
 package com.vet.client;
 
 import com.vet.entity.AbstractEntity;
-import com.vet.patient.Patient;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 import static java.lang.String.format;
 import static java.lang.String.join;
@@ -20,7 +16,7 @@ import static java.lang.String.join;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Client /*extends AbstractEntity*/ {
+public class Client extends AbstractEntity {
 
     public static final String PREFIX_BUSINESS_ID = "VC";
 
@@ -44,9 +40,9 @@ public class Client /*extends AbstractEntity*/ {
     @Column(name = "JOINING_DATE")
     private LocalDate joiningDate;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    //@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
     //@Setter(AccessLevel.NONE)
-    private Set<Patient> pets = new HashSet<>();
+    //private Set<Patient> pets = new HashSet<>();
 
     public Client(Long id) {
         this.id = id;
@@ -64,12 +60,12 @@ public class Client /*extends AbstractEntity*/ {
         return format("%s (%s)", getBusinessId(), getFullName());
     }
 
-    public void addPet(Patient pet){
+    /*public void addPet(Patient pet){
         pet.setOwner(this);
         pets.add(pet);
     }
 
     public void removePet(Patient pet){
         pets.remove(pet);
-    }
+    }*/
 }

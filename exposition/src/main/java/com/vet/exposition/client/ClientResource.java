@@ -1,4 +1,4 @@
-package com.vet.exposition;
+package com.vet.exposition.client;
 
 import com.vet.dto.ClientDto;
 import com.vet.facade.ManageClient;
@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
+
+import static java.util.stream.Collectors.toSet;
 
 @RestController
 @RequestMapping("/api/v1/clients")
@@ -20,8 +22,8 @@ public class ClientResource {
     }
 
     @GetMapping
-    public Set<ClientDto> listClientsOrdered(){
-        return manageClient.findAllOrdered();
+    public Set<ClientRepresentation> listClientsOrdered(){
+        return manageClient.findAllOrdered().stream().map(ClientRepresentation::toRepresentation).collect(toSet());
     }
 
     @PostMapping

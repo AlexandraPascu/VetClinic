@@ -1,15 +1,13 @@
 package com.vet.facade;
 
 import com.vet.annotations.ApplicationService;
-import com.vet.dto.ClientDto;
 import com.vet.client.Client;
+import com.vet.dto.ClientDto;
 import com.vet.mapper.ClientMapper;
-import com.vet.repository.ClientRepository;
+import com.vet.client.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
-
-import static java.util.stream.Collectors.toSet;
 
 @ApplicationService
 public class ManageClient {
@@ -20,15 +18,12 @@ public class ManageClient {
     @Autowired
     private ClientMapper mapper;
 
-    public Set<ClientDto> findAllOrdered(){
-        return repository.findAllByOrderByLastNameAscFirstNameAsc()
-                .stream()
-                .map(mapper::toDto)
-                .collect(toSet());
+    public Set<Client> findAllOrdered(){
+        return repository.findAllByOrderByLastNameAscFirstNameAsc();
     }
 
     public ClientDto get(Long id){
-        return mapper.toDto(repository.findExactlyOne(id));
+        return mapper.toDto(repository.findByIdOrThrow(id));
     }
 
     public void create(ClientDto clientDto){
@@ -38,7 +33,7 @@ public class ManageClient {
     }
 
     public void update(ClientDto clientDto) {
-        Client existingClient = repository.findExactlyOne(clientDto.id);
+        Client existingClient = repository.findByIdOrThrow(clientDto.id);
         Client client = mapper.toEntity(existingClient, clientDto);
         validateUniqueness(client);
     }
