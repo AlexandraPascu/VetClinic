@@ -29,7 +29,7 @@
         <h2database.version>2.1.210</h2database.version>
         <lombok.version>1.18.22</lombok.version>
         <oracle.version>11.2.0.3</oracle.version>
-        <postgres.version>42.3.1</postgres.version>
+        <postgres.version>42.3.3</postgres.version>
         <flyway.version>8.5.0</flyway.version>
     </properties>
 
