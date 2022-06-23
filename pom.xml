@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <spring-boot.version>2.6.5</spring-boot.version>
+        <spring-boot.version>2.6.6</spring-boot.version>
         <io.swagger.version>1.0.34</io.swagger.version>
         <io.springfox.version>2.8.0</io.springfox.version>
         <cucumber.version>7.1.0</cucumber.version>
